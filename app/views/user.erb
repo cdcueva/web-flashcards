@@ -1,0 +1,18 @@
+<h2>My Profile</h2>
+
+<table>
+  <thead>
+    <th>Game</th>
+    <th>Answered Correctly</th>
+    <th>Percentage Correct</th>
+  </thead>
+  <% if @round %>
+    <% @round.deck_id.name.each do |round| %>
+    <tr>
+      <td><%= round.deck %></td>
+      <td><%= guesses.where(round_id = 1) %></td> 
+      <td><%= guesses.percentage_correct %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
