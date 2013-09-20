@@ -19,14 +19,16 @@
 </head>
 <body>
   <div class="container">
-    <nav>
+    <nav class="nav">
       <ul>
         <% if current_user %>
-          <p>Welcome<li><%= current_user.name %></li></p>
+          
           <li><a href="/home">Home</a></li>
-          <li><a href="/profile/<%= current_user.id %>">Profile</a></li>
+          <li><a href="/profile">Profile</a></li>
           <li><a href="/logout">Logout</a></li>
-        <% end %> 
+        <% else %>
+          <li><a href="/home">test</a></li>
+        <% end %>
         </ul>
       </nav>
     <%= yield %>

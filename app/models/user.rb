@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticate(args)
-    User.find_by_email_and_password(args[:email],args[:password])  
+    User.find_by_email_and_password(args[:email], args[:password])  
   end
 
 end
