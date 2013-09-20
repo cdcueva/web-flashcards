@@ -18,10 +18,13 @@ end
 #_______POST________#
 
 post '/home' do
+
   if User.find_by_email(params[:user][:email])
     @user ||= User.find_by_email(params[:user][:email])   
   else
     @user = User.create(params[:user])
   end
-erb :home
+  @deck = Deck.all
+  erb :home
+
 end
