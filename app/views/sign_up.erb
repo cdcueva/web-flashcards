@@ -1,0 +1,14 @@
+<h2>Create new user:</h2>
+<form action="/sign_up" method="POST">
+<div>
+  <label for="email">Email: </label>
+  <input id="email" type="text" name="user[email]" value="<%= @user.try(:email) %>">
+</div>
+<div>
+  <label for="password">Password: </label>
+  <input id="password" type="password" name="user[password]" value="<%= @user.try(:password) %>">
+</div>
+<div>
+  <input class="create" type="submit" value="Create">
+</div>
+</form>

@@ -7,6 +7,15 @@ get '/' do
   erb :index
 end
 
+get '/sign_up' do
+  erb :sign_up
+end
+
+get '/home' do
+  @deck = Deck.all
+  erb :home
+end
+
 get '/round/:deck_id' do
   @deck = Deck.find(params[:deck_id]) 
   cards = Deck.find(params[:deck_id]).cards
@@ -20,29 +29,24 @@ end
 #_______POST________#
 
 post '/home' do
-
-  # @email = params[:email]
-  # user = User.authenticate(@email, params[:password])
-  # if user
-  #   # successfully authenticated; set up session and redirect
-  #   session[:user_id] = user.id
-  #   redirect '/'
-  # else
-  #   # an error occurred, re-render the sign-in form, displaying an error
-  #   @error = "Invalid email or password."
-  #   erb :sign_in
-  # end
-
-
-  if User.find_by_email(params[:user][:email])
-    @user ||= User.find_by_email(params[:user][:email])
-    
-    p session[:user_id] = @user.id   
+  @user = User.authenticate(params[:user])
+  
+  if @user
+    session[:id] = @user.id
+    redirect to('/home')
   else
-    @user = User.create(params[:user])
-    p session[:user_id] = @user.id
+    erb :index
   end
-  @deck = Deck.all
-  erb :home
 
+end
+
+post '/sign_up' do
+  @user = User.new(params[:user])
+  if @user.save
+    session[:id] = @user.id
+    redirect to('/home')
+  else
+    @errors = @user.errors
+    erb :index
+  end
 end
