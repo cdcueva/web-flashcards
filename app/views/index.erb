@@ -1,8 +1,19 @@
 <h1>Welcome to Web-Flashcards!</h1>
 
-<form action="/home" method="GET">
+<form action="/home" method="POST">
 <div>
   <label for="email">Email: </label>
   <input id="email" type="text" name="user[email]" value="<%= @user.try(:email) %>">
 </div>
+<div>
+  <label for="password">Password: </label>
+  <input id="password" type="password" name="user[password]" value="<%= @user.try(:password) %>">
+</div>
+<div>
+  <input class="login" type="submit" value="Login Existing User">
+</div>
+<div>
+  <input class="create" type="submit" value="Create New User">
+</div>
+</form>
 

@@ -19,6 +19,15 @@
 </head>
 <body>
   <div class="container">
+    <% if current_user %>
+      <nav>
+        <ul>
+          <li><% current_user.name %><li>
+          <li><a href="/home">Home</a><li>
+          <li><a href="/profile/<%= current_user.id %>">Profile</a><li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
   <%= yield %>
   </div>
 </body>
