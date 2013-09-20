@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   has_many :guesses, through: :rounds
 
   validates_uniqueness_of :email
+  validates :email, presence: true
+  validates :password, presence: true
+  
 
   include BCrypt
 
