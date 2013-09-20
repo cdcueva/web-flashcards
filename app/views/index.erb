@@ -3,17 +3,26 @@
 <form action="/home" method="POST">
 <div>
   <label for="email">Email: </label>
-  <input id="email" type="text" name="user[email]" value="<%= @user.try(:email) %>">
+  <input id="email" type="text" name="user[email]" placeholder="Email Required">
 </div>
 <div>
   <label for="password">Password: </label>
-  <input id="password" type="password" name="user[password]" value="<%= @user.try(:password) %>">
+  <input id="password" type="password" name="user[password]" placeholder="Enter Password">
 </div>
 <div>
   <input class="login" type="submit" value="Login Existing User">
 </div>
-<div>
-  <input class="create" type="submit" value="Create New User">
-</div>
 </form>
 
+<div>
+  <a href="/sign_up">Create New User</a>
+</div>
+<div class='errors'>
+  <% if @errors %>
+    <% @errors.each do |error, message| %>
+      <ol>
+        <li><%= error %> <%= message %></li>
+      </ol>
+    <% end %>
+  <% end %>
+</div>
