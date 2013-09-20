@@ -1,0 +1,14 @@
+<h1>Flashcards for the <%= @deck.name %> Deck</h1>
+<p></p>
+<p></p>
+
+<h3>Flashcard:</h3>
+<p><%= @deck.cards.sample.question %></p>
+<p></p>
+<p></p>
+<p>What is your guess?</p>
+<form action="/guess/<%= @card.id %>" method="POST">
+  <label for="guess">Your guess</label>
+  <input type="text" name="guess">
+  <input type="submit">
+</form>
