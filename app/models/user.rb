@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
     self.password_digest = @password
   end
 
+  def self.authenticate(args)
+    User.find_by_email_and_password(args[:email],args[:password])  
+  end
+
 end
