@@ -10,14 +10,17 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  def password
-    @password ||= Password.new(self.password_digest)
-  end
-
   def password=(secret)
+    return if secret == ''
     @password = Password.create(secret)
     self.password_digest = @password
   end
+
+  def password
+    return unless password_digest
+    @password ||= Password.new(self.password_digest)
+  end
+
 
   def self.authenticate(args)
     User.find_by_email_and_password(args[:email], args[:password])  
