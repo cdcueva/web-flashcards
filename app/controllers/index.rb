@@ -4,11 +4,18 @@
 
 get '/' do
   # Look in app/views/index.erb
+    # @round = leader board
     erb :index
 end
 
 get '/sign_up' do
   erb :sign_up
+end
+
+get '/profile/:id' do
+  @user = User.find(params[:id])
+  @rounds =
+  erb :profile
 end
 
 get '/home' do
