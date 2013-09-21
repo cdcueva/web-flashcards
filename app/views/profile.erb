@@ -1,14 +1,14 @@
 <h2> My Profile </h2>
 <p>Welcome <%= @user.email %> </p>
 
-<table class='profile' id="stats">
+<table class='profile'>
   <tr>
     <th>Game</th>
     <th>Correct Answers</th>
     <th>Percentage</th>
   </tr>
   <% if @stats %>
-  <tfoot>
+  <tfoot class='profile_foot'>
     <tr>
       <td>Totals:</td>
       <td><%= @total[:correct] %> / <%= @total[:total] %></td>
