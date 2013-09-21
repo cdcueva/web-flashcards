@@ -12,12 +12,13 @@ get '/round/:id' do
   card = @round.deck.cards.sample
 
   false_guesses = []
+  
   @round.guesses.each do |guess|
     false_guesses << guess.correct if guess.correct == false
   end  
 
   if @round.guesses.count == Deck.find(@round.deck_id).cards.count || false_guesses.count == 3
-    erb :summary
+    redirect to('/summary')
   end
 
   if @round.guesses.find_by_card_id(card.id)
@@ -45,7 +46,9 @@ get '/round/:round_id/card/:card_id' do
   erb :game
 end
 
-
+get '/summary' do
+  erb :summary
+end
 
 
 ############POST############
