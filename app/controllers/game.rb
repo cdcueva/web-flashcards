@@ -8,18 +8,25 @@ get '/deck/:id' do
 end
 
 get '/round/:id' do
-  round = Round.find(params[:id])
-  card = round.deck.cards.sample
-  
-  if card.guesses.empty?
-    card
-  elsif card.guesses.last.correct
+  @round = Round.find(params[:id])
+  card = @round.deck.cards.sample
+
+  false_guesses = []
+  @round.guesses.each do |guess|
+    false_guesses << guess.correct if guess.correct == false
+  end  
+
+  if @round.guesses.count == Deck.find(@round.deck_id).cards.count || false_guesses.count == 3
+    erb :summary
+  end
+
+  if @round.guesses.find_by_card_id(card.id)
     redirect to "/round/#{params[:id]}"
   else
     card
   end
 
-  redirect to "/round/#{round.id}/card/#{card.id}"
+  redirect to "/round/#{@round.id}/card/#{card.id}"
 end
 
 
@@ -27,14 +34,18 @@ get '/round/:round_id/card/:card_id' do
   @round = Round.find(params[:round_id])
   @deck = Deck.find(@round.deck_id)
   @card = Card.find(params[:card_id])
-  if Guess.last.correct
-    @message = "Correct! The answer was \"#{Card.find(Guess.last.card_id).answer}\""
-  else
-    @message = "Incorrect! The answer was \"#{Card.find(Guess.last.card_id).answer}\""
+  if @round.guesses.any?
+    if Guess.last.correct
+      @message = "Correct! The answer was \"#{Card.find(Guess.last.card_id).answer}\""
+    else
+      @message = "Incorrect! The answer was \"#{Card.find(Guess.last.card_id).answer}\""
+    end
   end
 
   erb :game
 end
+
+
 
 
 ############POST############
