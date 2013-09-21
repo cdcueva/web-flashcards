@@ -12,31 +12,30 @@ get '/sign_up' do
 end
 
 get '/profile/:id' do
+  @stats = []
   @user = User.find(params[:id])
-  round = @user.rounds.first # change first to go thru all rounds
-  @stats = {}
-  game = round.deck.name
-  @stats[:game_name] = game
-  correct_ques = round.guesses.where(:correct => true).count
-  num_of_ques = round.guesses.size
-  @stats[:correct_ques] = correct_ques
-  @stats[:number_of_questions] = num_of_ques
-  @stats[:perc] = ((correct_ques.to_f)/(num_of_ques))*100
+  rounds = @user.rounds 
+  
+  rounds.each do |round|
+    stat = {}
+    stat[:name] = round.deck.name
+    stat[:correct] = round.guesses.where(correct: true).count
+    stat[:total] = round.guesses.size
+    stat[:perc] = (stat[:correct].to_f/stat[:total])*100
+    @stats << stat 
+  end
+   
+  @total = {}
+  @total[:correct] = @stats.map{|x| x[:correct]}.reduce(:+)
+  @total[:total] = @stats.map{|x| x[:total]}.reduce(:+)
+  @total[:perc] = (@total[:correct].to_f/@total[:total] * 100).round(1)
+
   erb :profile
 end
 
 get '/home' do
   @deck = Deck.all
   erb :home
-end
-
-get '/round/:deck_id' do
-  @deck = Deck.find(params[:deck_id]) 
-  cards = Deck.find(params[:deck_id]).cards
-  @card = cards.sample
-  round = Round.create(user_id: session[:id], deck_id: params[:deck_id])
-  session[:round] = round.id
-  erb :card  
 end
 
 get '/logout' do
@@ -56,7 +55,7 @@ post '/home' do
     end
   else
     # @error = "Invalid email or password"
-    erb :index
+    # erb :index
     redirect '/'
   end
 
