@@ -14,12 +14,15 @@ th {
   color: red;
 }
 
-
-
-.nav li {
+.nav li{
   list-style-type: none;
-  display: inline;
-  float: right; 
+  /*display: inline;*/
+  float: right;
+  margin-right: 20px;
+}
+
+.nav li a{
+  text-decoration: none;
 }
 
 .decks {
@@ -36,4 +39,23 @@ th {
 
 .profile_foot{
   border-top: 1px solid black;
+}
+
+.login{
+  text-align: center; 
+}
+
+.register a{
+  /*text-align: center;*/
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.login_fields{
+  border: 2px solid #dadada;
+  /*border-radius: 7px;*/
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  margin-bottom: 15px;
 }
