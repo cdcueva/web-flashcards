@@ -13,7 +13,15 @@ end
 
 get '/profile/:id' do
   @user = User.find(params[:id])
-  @rounds =
+  round = @user.rounds.first # change first to go thru all rounds
+  @stats = {}
+  game = round.deck.name
+  @stats[:game_name] = game
+  correct_ques = round.guesses.where(:correct => true).count
+  num_of_ques = round.guesses.size
+  @stats[:correct_ques] = correct_ques
+  @stats[:number_of_questions] = num_of_ques
+  @stats[:perc] = ((correct_ques.to_f)/(num_of_ques))*100
   erb :profile
 end
 

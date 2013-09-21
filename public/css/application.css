@@ -23,4 +23,6 @@ th {
   list-style-type: none;
 }
 
-
+#stats th {
+  width: 120px;
+}

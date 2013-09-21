@@ -25,5 +25,8 @@ require 'CSV'
 #   deck2.cards << Card.create!(:question => row[1], :answer => row[0])
 # end
 
-
-10.times do { }
+i = 1
+10.times do |i|
+  Guess.create(card_id: i, round_id: 1, correct: ([0,1].sample))
+  i += 1
+end
