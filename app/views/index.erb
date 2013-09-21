@@ -1,19 +1,20 @@
-<h1>Welcome to Web-Flashcards!</h1>
+<h1 class='login'>Welcome to Web-Flashcards!</h1>
 
-<form action="/home" method="POST">
+<form class='login' action="/home" method="POST">
 <div>
-  <label for="email">Email: </label>
-  <input id="email" type="email" name="user[email]" placeholder="Email Required">
+  <label for="email">Email</label>
 </div>
 <div>
-  <label for="password">Password: </label>
-  <input id="password" type="password" name="user[password]" placeholder="Enter Password">
+  <input class='login_fields' id="email" type="email" name="user[email]" placeholder="Email Required">
 </div>
 <div>
-  <input class="login" type="submit" value="Login Existing User">
+  <label for="password">Password</label>
+</div>
+<div>
+  <input class='login_fields' id="password" type="password" name="user[password]" placeholder="Enter Password">
+</div>
+<div>
+  <input class='login_button' type="submit" value="Login Existing User">
 </div>
 </form>
 
-<div>
-  <a href="/sign_up">Create New User</a>
-</div>
