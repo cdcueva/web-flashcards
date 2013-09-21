@@ -1,18 +1,29 @@
 <h2> My Profile </h2>
 <p>Welcome <%= @user.email %> </p>
 
-<table id="stats">
+<table class='profile' id="stats">
   <tr>
     <th>Game</th>
     <th>Correct Answers</th>
     <th>Percentage</th>
   </tr>
-
-  <tr>
-    <td><%= @stats[:game_name] %></td>
-    <td><%= @stats[:correct_ques] %> / <%= @stats[:number_of_questions] %></td>
-    <td><%= @stats[:perc] %>%</td>
-  </tr>
+  <% if @stats %>
+  <tfoot>
+    <tr>
+      <td>Totals:</td>
+      <td><%= @total[:correct] %> / <%= @total[:total] %></td>
+      <td><%= @total[:perc] %>%</td>
+    </tr>
+  </tfoot>
+  <% @stats.each do |stat| %>
+    <tr>
+      <td><%= stat[:name] %></td>
+      <td><%= stat[:correct] %> / <%= stat[:total] %></td>
+      <td><%= stat[:perc] %>%</td>
+    </tr>
+  <% end %>
+  
+<% end %>
 
 </table>
 
