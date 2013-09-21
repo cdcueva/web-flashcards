@@ -18,7 +18,7 @@ get '/round/:id' do
   end  
 
   if @round.guesses.count == Deck.find(@round.deck_id).cards.count || false_guesses.count == 3
-    redirect to('/summary')
+    redirect to "/round/#{@round.id}/summary"
   end
 
   if @round.guesses.find_by_card_id(card.id)
@@ -46,7 +46,8 @@ get '/round/:round_id/card/:card_id' do
   erb :game
 end
 
-get '/summary' do
+get '/round/:id/summary' do
+  @round = Round.find(params[:id])
   erb :summary
 end
 

@@ -35,9 +35,9 @@ get '/profile/:id' do
   erb :profile
 end
 
-get '/play_again/:id' do
-  @deck_id = params[:id]
-  erb :game
+get '/play_again/:round_id' do
+  deck_id = Round.find(params[:round_id]).deck_id
+  redirect to "/deck/#{deck_id}"
 end
 
 get '/home' do
