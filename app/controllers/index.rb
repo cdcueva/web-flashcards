@@ -25,11 +25,13 @@ get '/profile/:id' do
     @stats << stat 
   end
    
-  @total = {}
-  @total[:correct] = @stats.map{|x| x[:correct]}.reduce(:+)
-  @total[:total] = @stats.map{|x| x[:total]}.reduce(:+)
-  @total[:perc] = (@total[:correct].to_f/@total[:total] * 100).round(1)
-
+  if !@stats.empty? 
+    @total = {}
+    @total[:correct] = @stats.map{|x| x[:correct]}.reduce(:+)
+    @total[:total] = @stats.map{|x| x[:total]}.reduce(:+)
+    @total[:perc] = (@total[:correct].to_f/@total[:total] * 100).round(1)
+  end
+  
   erb :profile
 end
 
