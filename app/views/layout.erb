@@ -24,6 +24,8 @@
           <li><a href="/home">Home</a></li>
           <li><a href="/profile/<%= current_user.id %>">Profile</a></li>
           <li><a href="/logout">Logout</a></li>
+          <% else %>
+          <li class='register'><a href="/sign_up">Register</a></li>
         <% end %>
         </ul>
       </nav>
