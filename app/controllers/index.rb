@@ -3,7 +3,6 @@
 #_______GET________#
 
 get '/' do
-  # Look in app/views/index.erb
     # @round = leader board
     erb :index
 end
