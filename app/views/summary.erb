@@ -1,2 +1,24 @@
 <h2> Round Summary </h2>
 
+<table class='summary'>
+  <tr>
+    <td>Deck Played:</td>
+    <td><%= @round.deck.name %></td>
+  </tr>
+  <tr>
+    <td>Answered Correctly:</td>
+    <td><%= @round.guesses.where(correct: true).count %></td>
+  </tr>
+  <tr>
+    <td>Percentage Correct:</td>
+    <td><%= (@round.guesses.where(correct: true).count.to_f)/(@round.guesses.size) * 100 %>%</td>
+  </tr>
+</table>
+
+<div>
+  <a href="/play_again/<%= @round.deck_id %>">Play Again</a>
+</div>
+
+<div>
+  <a href="/home">Choose different deck</a>
+</div>

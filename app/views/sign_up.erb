@@ -12,3 +12,13 @@
   <input class="create" type="submit" value="Create">
 </div>
 </form>
+<div class='errors'>
+  <% if @errors %>
+  <p>Try again please</p>
+    <% @errors.each do |error, message| %>
+      <ul>
+        <li><%= error %> <%= message %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
