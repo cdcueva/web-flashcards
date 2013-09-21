@@ -3,7 +3,7 @@
 #_______GET________#
 
 get '/' do
-    # @round = leader board
+    @round = Round.all
     erb :index
 end
 
@@ -33,6 +33,11 @@ get '/profile/:id' do
   erb :profile
 end
 
+get '/play_again/:id' do
+  @deck_id = params[:id]
+  erb :game
+end
+
 get '/home' do
   @deck = Deck.all
   erb :home
@@ -54,8 +59,6 @@ post '/home' do
       redirect '/home'
     end
   else
-    # @error = "Invalid email or password"
-    # erb :index
     redirect '/'
   end
 
@@ -68,6 +71,6 @@ post '/sign_up' do
     redirect to('/home')
   else
     @errors = @user.errors
-    erb :index
+    erb :sign_up
   end
 end

@@ -2,16 +2,19 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  /*border: 1px dotted black;*/
 }
 
 th {
   text-align: left;
 }
 
-.errors {
+.errors li{
+  list-style-type: none;
   color: red;
 }
+
+
 
 .nav li {
   list-style-type: none;
@@ -23,6 +26,14 @@ th {
   list-style-type: none;
 }
 
-#stats th {
-  width: 120px;
+.profile, th, td{
+  /*width: 120px;*/
+  /*border: 1px solid black;*/
+  white-space: nowrap;
+  padding: 5px 15px 5px 2px;
+  text-align: left;
+}
+
+.profile_foot{
+  border-top: 1px solid black;
 }
