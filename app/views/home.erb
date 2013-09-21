@@ -1,6 +1,5 @@
 <h2>Decks</h2>
 <p>SELECT A DECK:</p>
-
 <ol>
   <% @deck.each do |deck| %>
     <li><a href="/round/<%= deck.id %>"><%= deck.name %></a></li>

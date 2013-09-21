@@ -1,10 +1,10 @@
-enable :sessions
+# enable :sessions
 
 #_______GET________#
 
 get '/' do
   # Look in app/views/index.erb
-  erb :index
+    erb :index
 end
 
 get '/sign_up' do
@@ -25,17 +25,25 @@ get '/round/:deck_id' do
   erb :card  
 end
 
+get '/logout' do
+  session.clear
+  redirect '/'
+end
 
 #_______POST________#
 
 post '/home' do
-  @user = User.authenticate(params[:user])
   
-  if @user
-    session[:id] = @user.id
-    redirect to('/home')
+  if params[:user][:email] != '' && params[:user][:password] != ''
+    user = User.authenticate(params[:user][:email], params[:user][:password])
+    if user
+      session[:user_id] = user.id
+      redirect '/home'
+    end
   else
+    # @error = "Invalid email or password"
     erb :index
+    redirect '/'
   end
 
 end
@@ -43,7 +51,7 @@ end
 post '/sign_up' do
   @user = User.new(params[:user])
   if @user.save
-    session[:id] = @user.id
+    session[:user_id] = @user.id
     redirect to('/home')
   else
     @errors = @user.errors
