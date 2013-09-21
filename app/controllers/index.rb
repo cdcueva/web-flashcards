@@ -33,10 +33,6 @@ get '/profile/:id' do
   erb :profile
 end
 
-get '/round/:id' do
-  
-end
-
 get '/home' do
   @deck = Deck.all
   erb :home
