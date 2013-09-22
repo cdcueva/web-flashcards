@@ -1,6 +1,7 @@
 <h2 class='decks'>SELECT A GAME:</h2>
 <ul class='decks'>
   <% @deck.each do |deck| %>
-    <li><a href="/deck/<%= deck.id %>"><%= deck.name %></a></li>
+    <li><%= deck.name %></li><br>
+    <li><a href="/deck/<%= deck.id %>"><img src="<%= deck.cards.first.question %>"></a></li><br>
   <% end %>
 </ul>
