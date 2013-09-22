@@ -52,7 +52,7 @@ get '/round/:id/summary' do
 end
 
 
-############POST############
+############POST############ => 
 
 
 post '/round/:round_id/card/:card_id' do
@@ -60,7 +60,7 @@ post '/round/:round_id/card/:card_id' do
   @card = Card.find(params[:card_id])
   @round = Round.find(params[:round_id])
 
-  if guess == @card.answer
+  if guess.downcase == @card.answer.downcase
     Guess.create(correct: true, card_id: params[:card_id],round_id: params[:round_id])
   else
     Guess.create(correct: false, card_id: params[:card_id],round_id: params[:round_id])
