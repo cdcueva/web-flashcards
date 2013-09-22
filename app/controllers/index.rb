@@ -23,7 +23,11 @@ get '/profile/:id' do
     stat[:name] = round.deck.name
     stat[:correct] = round.guesses.where(correct: true).count
     stat[:total] = round.guesses.size
-    stat[:perc] = (stat[:correct].to_f/stat[:total])*100
+    if ((stat[:correct].to_f/stat[:total])*100).nan?
+      stat[:perc] = 0.0
+    else
+      stat[:perc] = (stat[:correct].to_f/stat[:total])*100
+    end
     @stats << stat 
   end
    
