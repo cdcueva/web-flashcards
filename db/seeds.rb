@@ -1,6 +1,6 @@
 require 'csv'
 
-deck1 = Deck.create!(:name => "programming")
+deck1 = Deck.create!(:name => "Programming")
 
 
 CSV.foreach('cards0.csv') do |row|
@@ -8,7 +8,7 @@ CSV.foreach('cards0.csv') do |row|
 end
 
 
-deck2 = Deck.create!(:name => "nighthawks")
+deck2 = Deck.create!(:name => "Nighthawks")
 
 
 CSV.foreach('nighthawks.csv') do |row|
