@@ -30,8 +30,6 @@ th {
 }
 
 .profile, th, td{
-  /*width: 120px;*/
-  /*border: 1px solid black;*/
   white-space: nowrap;
   padding: 5px 15px 5px 2px;
   text-align: left;
@@ -52,10 +50,25 @@ th {
 }
 
 .login_fields{
-  border: 2px solid #dadada;
-  /*border-radius: 7px;*/
+  /*border: 2px solid #dadada;
   outline: none;
   border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;*/
+  
+  outline:none;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  /*border-radius:3px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;*/
+  border:1px solid rgba(0,0,0, 0.2);
   margin-bottom: 15px;
+}
+
+.login_fields:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 255, 1);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, 1); 
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 255, 1);
+  border:1px solid rgba(0,0,255, 0.8); 
 }
