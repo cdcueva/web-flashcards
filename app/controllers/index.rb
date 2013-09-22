@@ -56,10 +56,13 @@ post '/home' do
   
   if params[:user][:email] != '' && params[:user][:password] != ''
     user = User.authenticate(params[:user][:email], params[:user][:password])
-    if user
+    if user != nil
       session[:user_id] = user.id
       redirect '/home'
+    else
+      redirect '/'
     end
+
   else
     redirect '/'
   end

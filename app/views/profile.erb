@@ -3,6 +3,7 @@
 
 <table class='profile'>
   <tr>
+    <th>Date</th>
     <th>Game</th>
     <th>Correct Answers</th>
     <th>Percentage</th>
@@ -11,12 +12,14 @@
   <tfoot class='profile_foot'>
     <tr>
       <td>Totals:</td>
+      <td> </td>
       <td><%= @total[:correct] %> / <%= @total[:total] %></td>
       <td><%= @total[:perc] %>%</td>
     </tr>
   </tfoot>
   <% @stats.each do |stat| %>
     <tr>
+      <td> </td>
       <td><%= stat[:name] %></td>
       <td><%= stat[:correct] %> / <%= stat[:total] %></td>
       <td><%= stat[:perc] %>%</td>

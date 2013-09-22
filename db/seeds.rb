@@ -1,4 +1,4 @@
-require 'CSV'
+require 'csv'
 
 deck1 = Deck.create!(:name => "programming")
 
