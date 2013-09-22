@@ -1,8 +1,9 @@
 <h1>Flashcards for the "<%= @deck.name %>" Deck</h1>
 <p></p>
 <p></p>
-<h3>Result for last question: <%= @message if @message %></h3>
-
+<% if @message %>
+<h3>Result for last question: <%= @message %></h3>
+<% end %>
 <h3>Flashcard:</h3>
 <img src="<%= @card.question %>">
 <p></p>

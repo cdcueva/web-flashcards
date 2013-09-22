@@ -32,16 +32,16 @@ card_array.each do |card_hash|
 end
 
 deck4 = Deck.create!(:name => "World Flags")
-card_array = [{:question => "http://www.flags.net/images/largeflags/AFGH0001.GIF", :answer => "Afghanistan"},
-							{:question => "http://www.flags.net/images/largeflags/NETH0001.GIF", :answer => "Netherlands"},
-							{:question => "http://www.flags.net/images/largeflags/NORW0001.GIF", :answer => "Norway"},
-							{:question => "http://www.flags.net/images/largeflags/SOAF0001.GIF", :answer => "South Africa"},
-							{:question => "http://www.flags.net/images/largeflags/ZBWE0001.GIF", :answer => "Zimbabwe"},
-							{:question => "http://www.flags.net/images/largeflags/PAKS0001.GIF", :answer => "Pakistan"},
-							{:question => "http://www.flags.net/images/largeflags/ARGE0001.GIF", :answer => "Argentina"},
-							{:question => "http://www.flags.net/images/largeflags/MALS0001.GIF", :answer => "Malaysia"},
-							{:question => "http://www.flags.net/images/largeflags/RMNA0001.GIF", :answer => "Romania"},
-							{:question => "http://www.flags.net/images/largeflags/ECUA0001.GIF", :answer => "Ecuador"}]
+card_array = [{:question => "/images/1.GIF", :answer => "Afghanistan"},
+							{:question => "/images/2.GIF", :answer => "Netherlands"},
+							{:question => "/images/3.GIF", :answer => "Norway"},
+							{:question => "/images/4.GIF", :answer => "South Africa"},
+							{:question => "/images/5.GIF", :answer => "Zimbabwe"},
+							{:question => "/images/6.GIF", :answer => "Pakistan"},
+							{:question => "/images/7.GIF", :answer => "Argentina"},
+							{:question => "/images/8.GIF", :answer => "Malaysia"},
+							{:question => "/images/9.GIF", :answer => "Romania"},
+							{:question => "/images/10.GIF", :answer => "Ecuador"}]
 
 card_array.each do |card_hash|
 	deck4.cards << Card.create!(card_hash)
@@ -49,19 +49,21 @@ end
 
 deck5 = Deck.create!(:name => "Two-Handed Sign Language Alphabet")
 
-card_array = [{:question => "http://etc.usf.edu/clipart/21200/21204/a_21204_sm.gif", :answer => "A"}]
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-							# {:question => "", :answer => ""},
-# ]
+card_array = [{:question => "http://etc.usf.edu/clipart/21200/21204/a_21204_sm.gif", :answer => "A"},
+							{:question => "http://etc.usf.edu/clipart/21200/21248/b_21248_sm.gif", :answer => "B"},
+							{:question => "http://etc.usf.edu/clipart/21200/21250/d_21250_sm.gif", :answer => "D"},
+							{:question => "http://etc.usf.edu/clipart/21200/21251/e_21251_sm.gif", :answer => "E"},
+							{:question => "http://etc.usf.edu/clipart/21200/21252/f_21252_sm.gif", :answer => "F"},
+							{:question => "http://etc.usf.edu/clipart/21200/21253/g_21253_sm.gif", :answer => "G"},
+							{:question => "http://etc.usf.edu/clipart/21200/21254/h_21254_sm.gif", :answer => "H"},
+							{:question => "http://etc.usf.edu/clipart/21200/21255/i_21255_sm.gif", :answer => "I"},
+							{:question => "http://etc.usf.edu/clipart/21200/21256/j_21256_sm.gif", :answer => "J"},
+							{:question => "http://etc.usf.edu/clipart/21200/21257/k_21257_sm.gif", :answer => "K"}
+]
 
-
+card_array.each do |card_hash|
+	deck5.cards << Card.create!(card_hash)
+end
 
 
 # i = 1
