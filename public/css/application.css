@@ -5,28 +5,40 @@
   /*border: 1px dotted black;*/
 }
 
-th {
-  text-align: left;
-}
 
 .errors li{
   list-style-type: none;
   color: red;
 }
 
+.nav{
+  width: auto;
+  height: 50px;
+  background-color: rgba(192, 192, 192, .6);
+}
+
+.nav ul{
+  margin: 0 0 0 0;
+}
+
 .nav li{
   list-style-type: none;
-  /*display: inline;*/
   float: right;
-  margin-right: 20px;
+  margin: 13px 20px 0 0;
 }
 
 .nav li a{
   text-decoration: none;
+  color: rgba(47,79,79, 1);
 }
 
 .decks {
   list-style-type: none;
+}
+
+
+th {
+  text-align: left;
 }
 
 .profile, th, td{
@@ -44,31 +56,42 @@ th {
 }
 
 .register a{
-  /*text-align: center;*/
   margin-right: 20px;
   text-decoration: none;
 }
 
 .login_fields{
-  /*border: 2px solid #dadada;
-  outline: none;
-  border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;*/
-  
   outline:none;
   transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
-  /*border-radius:3px;
-  -webkit-border-radius:3px;
-  -moz-border-radius:3px;*/
-  border:1px solid rgba(0,0,0, 0.2);
+  border:1px solid rgba(189,189,189, 0.7);
   margin-bottom: 15px;
 }
 
-.login_fields:focus {
+.login_fields:hover{
   box-shadow: 0 0 5px rgba(0, 0, 255, 1);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, 1); 
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 255, 1);
-  border:1px solid rgba(0,0,255, 0.8); 
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, 2); 
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 255, 2);
+  border:1px solid rgba(192,192,192, 0.9); 
+}
+
+h1.login{
+  color: rgba(47,79,79, 1);
+}
+
+form.login{
+ color: rgba(47,79,79, 2); 
+}
+
+.login_button{
+  color: rgba(47,79,79, 2);
+}
+
+.bottom{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 75px;
+  background-color: rgba(75, 75, 120, .7);
 }
