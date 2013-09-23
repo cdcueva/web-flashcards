@@ -49,8 +49,8 @@ end
 
 deck5 = Deck.create!(:name => "Two-Handed Sign Language Alphabet")
 
-card_array = [{:question => "http://etc.usf.edu/clipart/21200/21204/a_21204_sm.gif", :answer => "A"},
-							{:question => "http://etc.usf.edu/clipart/21200/21248/b_21248_sm.gif", :answer => "B"},
+card_array = [{:question => "/images/11.GIF", :answer => "A"},
+							{:question => "/images/12.GIF", :answer => "B"},
 							{:question => "http://etc.usf.edu/clipart/21200/21250/d_21250_sm.gif", :answer => "D"},
 							{:question => "http://etc.usf.edu/clipart/21200/21251/e_21251_sm.gif", :answer => "E"},
 							{:question => "http://etc.usf.edu/clipart/21200/21252/f_21252_sm.gif", :answer => "F"},
