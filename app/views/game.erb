@@ -10,8 +10,24 @@
 <p></p>
 <p>What is your guess?</p>
 <form action="/round/<%= @round.id %>/card/<%= @card.id %>" method="POST">
-  <label for="guess">Your guess</label>
+  <label for="guess">Answer</label>
   <input type="text" name="guess">
   <input type="submit">
-</form>
+</form><br>
 
+<div>
+	<table class=''>
+	  <tr>
+	    <td>Number of Cards Remaining:</td>
+	    <td><%= @remaining_cards %></td>
+	  </tr>
+	  <tr>
+	    <td>Number of Guesses Remaining </td>
+	    <td><%= @remaining_guesses %></td>
+	  </tr>
+	  <tr>
+	    <td>Number Answered Correct:</td>
+	    <td><%= @round.guesses.where(correct: true).count %></td>
+	  </tr>
+	</table>
+</div>

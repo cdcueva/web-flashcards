@@ -10,12 +10,11 @@ end
 get '/round/:id' do
   @round = Round.find(params[:id])
   card = @round.deck.cards.sample
-
-  false_guesses = []
   
+  false_guesses = []
   @round.guesses.each do |guess|
     false_guesses << guess.correct if guess.correct == false
-  end  
+  end
 
   if @round.guesses.count == Deck.find(@round.deck_id).cards.count || false_guesses.count == 3
     redirect to "/round/#{@round.id}/summary"
@@ -35,7 +34,18 @@ get '/round/:round_id/card/:card_id' do
   @round = Round.find(params[:round_id])
   @deck = Deck.find(@round.deck_id)
   @card = Card.find(params[:card_id])
+  @remaining_cards = @deck.cards.count
+  @remaining_guesses = 3
   if @round.guesses.any?
+    @remaining_cards = @deck.cards.count - @round.guesses.count
+    
+    false_guesses = []
+    @round.guesses.each do |guess|
+      false_guesses << guess.correct if guess.correct == false
+    end
+
+    @remaining_guesses = 3 - false_guesses.count if false_guesses.count
+
     if Guess.last.correct
       @message = "Correct! The answer was \"#{Card.find(Guess.last.card_id).answer}\""
     else
