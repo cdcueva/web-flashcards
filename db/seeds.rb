@@ -47,23 +47,23 @@ card_array.each do |card_hash|
 	deck4.cards << Card.create!(card_hash)
 end
 
-deck5 = Deck.create!(:name => "Two-Handed Sign Language Alphabet")
+# deck5 = Deck.create!(:name => "Two-Handed Sign Language Alphabet")
 
-card_array = [{:question => "/images/11.GIF", :answer => "A"},
-							{:question => "/images/12.GIF", :answer => "B"},
-							{:question => "http://etc.usf.edu/clipart/21200/21250/d_21250_sm.gif", :answer => "D"},
-							{:question => "http://etc.usf.edu/clipart/21200/21251/e_21251_sm.gif", :answer => "E"},
-							{:question => "http://etc.usf.edu/clipart/21200/21252/f_21252_sm.gif", :answer => "F"},
-							{:question => "http://etc.usf.edu/clipart/21200/21253/g_21253_sm.gif", :answer => "G"},
-							{:question => "http://etc.usf.edu/clipart/21200/21254/h_21254_sm.gif", :answer => "H"},
-							{:question => "http://etc.usf.edu/clipart/21200/21255/i_21255_sm.gif", :answer => "I"},
-							{:question => "http://etc.usf.edu/clipart/21200/21256/j_21256_sm.gif", :answer => "J"},
-							{:question => "http://etc.usf.edu/clipart/21200/21257/k_21257_sm.gif", :answer => "K"}
-]
+# card_array = [{:question => "/images/11.GIF", :answer => "A"},
+# 							{:question => "/images/12.GIF", :answer => "B"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21250/d_21250_sm.gif", :answer => "D"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21251/e_21251_sm.gif", :answer => "E"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21252/f_21252_sm.gif", :answer => "F"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21253/g_21253_sm.gif", :answer => "G"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21254/h_21254_sm.gif", :answer => "H"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21255/i_21255_sm.gif", :answer => "I"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21256/j_21256_sm.gif", :answer => "J"},
+# 							{:question => "http://etc.usf.edu/clipart/21200/21257/k_21257_sm.gif", :answer => "K"}
+# ]
 
-card_array.each do |card_hash|
-	deck5.cards << Card.create!(card_hash)
-end
+# card_array.each do |card_hash|
+# 	deck5.cards << Card.create!(card_hash)
+# end
 
 
 # i = 1
