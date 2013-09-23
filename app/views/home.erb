@@ -1,13 +1,13 @@
-<h2 class='decks'>Select Game</h2>
+<h2 class='decks'>Select Deck</h2>
 <table class='decks'>
   <tr>  
   <% @deck.each do |deck| %>
-    <th><%= deck.name %></th>
+    <th class='decks'><%= deck.name %></th>
    <% end %>
   </tr>
   <tr>
   <% @deck.each do |deck| %>
-  <td ><a href="/deck/<%= deck.id %>"><img src="<%= deck.cards.first.question %>"></a></td>
+  <td class='decks'><a href="/deck/<%= deck.id %>"><img src="<%= deck.cards.first.question %>"></a></td>
   <% end %>
   </tr> 
 </table>

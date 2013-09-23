@@ -1,13 +1,13 @@
-<h2> My Profile </h2>
-<p>Welcome <%= @user.email %> </p>
+<h2 class='profile'>Profile</h2>
+<p class='profile'>Welcome <%= @user.email %></p>
 
 <table class='profile'>
   <tr>
     <th>Date</th>
-    <th>Game</th>
+    <th>Deck</th>
     <th>Correct Answers</th>
     <th>Percentage</th>
-  </tr>
+  </th>
   <% if @stats && @total %>
   <tfoot class='profile_foot'>
     <tr>
