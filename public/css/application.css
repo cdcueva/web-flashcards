@@ -57,7 +57,7 @@ body{
 
 }
 
-.decks, .game {
+.decks, .game, .leaderbords{
   width: auto;
   text-align: center;
   color: rgba(47,79,79, 1);
@@ -89,7 +89,7 @@ th {
   font-weight: bolder;
 }
 
-table.profile, table.summary{
+table.profile, table.summary, table.leaderbords{
   margin: 0 auto;
 }
 
