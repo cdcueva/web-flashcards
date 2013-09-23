@@ -16,16 +16,16 @@ require 'csv'
 # end
 
 deck3 = Deck.create!(:name => "Looney Tunes Characters")
-card_array = [{:question => "http://toolooney.goldenagecartoons.com/mckimsonbugsyell.gif", :answer => "Bugs Bunny"},
-							{:question => "http://toolooney.goldenagecartoons.com/dawgclip.gif",:answer => "Barnyard Dawg"},
-							{:question => "http://toolooney.goldenagecartoons.com/beakyclip.gif",:answer => "Beaky Buzzard"},
-							{:question => "http://toolooney.goldenagecartoons.com/daffymarch.gif",:answer => "Daffy Duck"},
-							{:question => "http://toolooney.goldenagecartoons.com/elmerclipart.jpg",:answer => "Elmer Fudd"},
-							{:question => "http://toolooney.goldenagecartoons.com/foglistenclip.gif",:answer => "Foghorn Leghorn"},
-							{:question => "http://toolooney.goldenagecartoons.com/marvinclipart2.gif",:answer => "Marvin Martian"},
-							{:question => "http://toolooney.goldenagecartoons.com/pepepointclip.gif",:answer => "Pepe Le Pew"},
-							{:question => "http://toolooney.goldenagecartoons.com/prokywaveclip.gif",:answer => "Porky Pig"},
-							{:question => "http://toolooney.goldenagecartoons.com/sambia.gif",:answer => "Yosemite Sam"}]
+card_array = [{:question => "/images/21.GIF", :answer => "Bugs Bunny"},
+							{:question => "/images/22.GIF",:answer => "Barnyard Dawg"},
+							{:question => "/images/23.GIF",:answer => "Beaky Buzzard"},
+							{:question => "/images/24.GIF",:answer => "Daffy Duck"},
+							{:question => "/images/25.jpg",:answer => "Elmer Fudd"},
+							{:question => "/images/26.GIF",:answer => "Foghorn Leghorn"},
+							{:question => "/images/27.GIF",:answer => "Marvin Martian"},
+							{:question => "/images/28.GIF",:answer => "Pepe Le Pew"},
+							{:question => "/images/29.GIF",:answer => "Porky Pig"},
+							{:question => "/images/30.GIF",:answer => "Yosemite Sam"}]
 
 card_array.each do |card_hash|
 	deck3.cards << Card.create!(card_hash)
@@ -51,15 +51,14 @@ deck5 = Deck.create!(:name => "Two-Handed Sign Language Alphabet")
 
 card_array = [{:question => "/images/11.GIF", :answer => "A"},
 							{:question => "/images/12.GIF", :answer => "B"},
-							{:question => "http://etc.usf.edu/clipart/21200/21250/d_21250_sm.gif", :answer => "D"},
-							{:question => "http://etc.usf.edu/clipart/21200/21251/e_21251_sm.gif", :answer => "E"},
-							{:question => "http://etc.usf.edu/clipart/21200/21252/f_21252_sm.gif", :answer => "F"},
-							{:question => "http://etc.usf.edu/clipart/21200/21253/g_21253_sm.gif", :answer => "G"},
-							{:question => "http://etc.usf.edu/clipart/21200/21254/h_21254_sm.gif", :answer => "H"},
-							{:question => "http://etc.usf.edu/clipart/21200/21255/i_21255_sm.gif", :answer => "I"},
-							{:question => "http://etc.usf.edu/clipart/21200/21256/j_21256_sm.gif", :answer => "J"},
-							{:question => "http://etc.usf.edu/clipart/21200/21257/k_21257_sm.gif", :answer => "K"}
-]
+							{:question => "/images/13.GIF", :answer => "D"},
+							{:question => "/images/14.GIF", :answer => "E"},
+							{:question => "/images/15.GIF", :answer => "F"},
+							{:question => "/images/16.GIF", :answer => "G"},
+							{:question => "/images/17.GIF", :answer => "H"},
+							{:question => "/images/18.GIF", :answer => "I"},
+							{:question => "/images/19.GIF", :answer => "J"},
+							{:question => "/images/20.GIF", :answer => "K"}]
 
 card_array.each do |card_hash|
 	deck5.cards << Card.create!(card_hash)
