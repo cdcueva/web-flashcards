@@ -52,7 +52,7 @@ get '/logout' do
   redirect '/'
 end
 
-get '/leaderbords' do
+get '/leaderboard' do
   @rounds = []
   users = {}
   User.all.each do |user|
@@ -60,7 +60,8 @@ get '/leaderbords' do
   end
   @rounds = @rounds.sort_by {|round| round.guesses.count}.reverse
   @rounds.slice(0, 10)
-  erb :leaderbords
+  @users = User.all
+  erb :leaderboard
 end
 
 #_______POST________#
