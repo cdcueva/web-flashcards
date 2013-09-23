@@ -15,7 +15,7 @@
       <td><%= round.deck.name %></td>
       <td><%= round.guesses.select {|guess| guess.correct == true }.count %></td>
       <td><%= round.deck.cards.count %></td>
-      <td><%= ((round.guesses.select {|guess| guess.correct == true }.count.to_f/round.deck.cards.count)*100).to_i %>%</td>
+      <td><%= ((round.guesses.select {|guess| guess.correct == true }.count.to_f/round.deck.cards.count)*100).round(1) %>%</td>
     </tr>
   <% end %>
   
