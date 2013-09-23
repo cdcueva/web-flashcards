@@ -1,0 +1,22 @@
+<h2> Leaderbords </h2>
+
+<table class="leaderbords" >
+  <tr>
+    <th>User Email</th>
+    <th>Deck Name</th>
+    <th>Total Correct Answers</th>
+    <th>Total Cards</th>
+    <th>Percent Correct</th>
+  </tr>
+
+  <% @rounds.each do |round| %>
+    <tr>
+      <td><%= round.user.email %></td>
+      <td><%= round.deck.name %></td>
+      <td><%= round.guesses.select {|guess| guess.correct == true }.count %></td>
+      <td><%= round.deck.cards.count %></td>
+      <td><%= ((round.guesses.select {|guess| guess.correct == true }.count.to_f/round.deck.cards.count)*100).to_i %>%</td>
+    </tr>
+  <% end %>
+  
+</table>

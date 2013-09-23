@@ -26,7 +26,7 @@ get '/profile/:id' do
     if ((stat[:correct].to_f/stat[:total])*100).nan?
       stat[:perc] = 0.0
     else
-      stat[:perc] = (stat[:correct].to_f/stat[:total])*100
+      stat[:perc] = ((stat[:correct].to_f/stat[:total])*100).round(1)
     end
     @stats << stat 
   end
@@ -50,6 +50,17 @@ end
 get '/logout' do
   session.clear
   redirect '/'
+end
+
+get '/leaderbords' do
+  @rounds = []
+  users = {}
+  User.all.each do |user|
+    @rounds << user.rounds.max_by {|round| round.guesses.count}
+  end
+  @rounds = @rounds.sort_by {|round| round.guesses.count}.reverse
+  @rounds.slice(0, 10)
+  erb :leaderbords
 end
 
 #_______POST________#
