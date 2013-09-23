@@ -24,6 +24,8 @@ body{
 .errors li{
   list-style-type: none;
   color: red;
+  font-weight: bold;
+  text-align: center;
 }
 
 .nav{
@@ -45,20 +47,23 @@ body{
 .nav li a{
   text-decoration: none;
   color: rgba(47,79,79, 1);
+  font-weight: bold;
 }
 
 .nav li a:hover{
   color: rgba(0, 0, 0, .9);
   text-decoration: underline;
+
 }
 
 .decks {
   width: auto;
-  list-style-type: none;
+  text-align: center;
+  color: rgba(47,79,79, 1);
 }
 
-.decks li a img {
-float: right;
+table.decks{
+margin: 0 auto;
 }
 
 th {
@@ -79,9 +84,22 @@ th {
   text-align: center; 
 }
 
+
+.create{
+  text-align: center;  
+}
+
 .register a{
   margin-right: 20px;
   text-decoration: none;
+}
+
+h1.login{
+  color: rgba(47,79,79, 1);
+}
+
+form.login{
+ color: rgba(47,79,79, 2); 
 }
 
 .login_fields{
@@ -100,14 +118,36 @@ th {
   border:1px solid rgba(192,192,192, 0.9); 
 }
 
-h1.login{
+h2.create{
   color: rgba(47,79,79, 1);
 }
 
-form.login{
+form.create{
  color: rgba(47,79,79, 2); 
 }
 
-.login_button{
+.create_fields{
+  outline:none;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  border:1px solid rgba(189,189,189, 0.7);
+  margin-bottom: 15px;
+}
+
+.create_fields:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 255, 1);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, 2); 
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 255, 2);
+  border:1px solid rgba(192,192,192, 0.9); 
+}
+
+.req{
+  color: red;
+  font-weight: bolder;
+}
+
+.login_button, .create_button{
   color: rgba(47,79,79, 2);
+  font-weight: bold;
 }

@@ -1,23 +1,27 @@
-<h2>Create new user:</h2>
-<form action="/sign_up" method="POST">
+<h2 class='create'>Create new user</h2>
+<form class='create' action="/sign_up" method="POST">
 <div>
-  <label for="email">Email: </label>
-  <input id="email" type="text" name="user[email]" value="<%= @user.try(:email) %>">
+  <label for="email">Email<span class='req'> *</span></label>
 </div>
 <div>
-  <label for="password">Password: </label>
-  <input id="password" type="password" name="user[password]" value="<%= @user.try(:password) %>">
+  <input class='create_fields' type="email" name="user[email]" placeholder='Email Required'>
 </div>
 <div>
-  <input class="create" type="submit" value="Create">
+  <label for="password">Password<span class='req'> *</span></label>
+</diV>
+<div>
+  <input class='create_fields' type='password' name="user[password]" placeholder='Password Required'>
+</div>
+<div>
+  <input class='create_button' type="submit" value="Create">
 </div>
 </form>
 <div class='errors'>
   <% if @errors %>
-  <p>Try again please</p>
+  <p class='create'>Try again please</p>
     <% @errors.each do |error, message| %>
       <ul>
-        <li><%= error %> <%= message %></li>
+        <li><%= error.upcase %> <%= message %></li>
       </ul>
     <% end %>
   <% end %>
