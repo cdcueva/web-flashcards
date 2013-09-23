@@ -1,28 +1,27 @@
-<h1>Flashcards for the "<%= @deck.name %>" Deck</h1>
-<p></p>
-<p></p>
-<% if @message %>
-<h3>Result for last question: <%= @message %></h3>
-<% end %>
-<h3>Flashcard:</h3>
-<img src="<%= @card.question %>">
-<p></p>
-<p></p>
-<p>What is your guess?</p>
-<form action="/round/<%= @round.id %>/card/<%= @card.id %>" method="POST">
-  <label for="guess">Answer</label>
-  <input type="text" name="guess">
-  <input type="submit">
-</form><br>
+<h2 class='game'>The "<%= @deck.name %>" Deck</h2>
 
-<div>
-	<table class=''>
+<div class='game_1'>
+<% if @message %>
+<h3 class='game'>Result: <%= @message %></h3>
+<% end %>
+<h3 class='game'>Flashcard:</h3>
+<img class='game'src="<%= @card.question %>">
+<form class='game' action="/round/<%= @round.id %>/card/<%= @card.id %>" method="POST">
+	<br>
+  <label for="guess">Answer</label>
+  <input class='guess_field' type="text" name="guess">
+  <input class='guess_button' type="submit">
+</form><br>
+</div>
+
+<div class='game_2'>
+	<table class='real_time'>
 	  <tr>
 	    <td>Number of Cards Remaining:</td>
 	    <td><%= @remaining_cards %></td>
 	  </tr>
 	  <tr>
-	    <td>Number of Guesses Remaining </td>
+	    <td>Number of Guesses Remaining:</td>
 	    <td><%= @remaining_guesses %></td>
 	  </tr>
 	  <tr>
