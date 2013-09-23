@@ -2,16 +2,16 @@
 
 <form class='login' action="/home" method="POST">
 <div>
-  <label for="email">Email*</label>
+  <label for="email">Email<span class='req'> *</span></label>
 </div>
 <div>
-  <input class='login_fields' id="email" type="email" name="user[email]" placeholder="Email Required">
+  <input class='login_fields' type="email" name="user[email]" placeholder="Email Required">
 </div>
 <div>
-  <label for="password">Password*</label>
+  <label for="password">Password<span class='req'> *</span></label>
 </div>
 <div>
-  <input class='login_fields' id="password" type="password" name="user[password]" placeholder="Enter Password">
+  <input class='login_fields' type="password" name="user[password]" placeholder="Enter Password">
 </div>
 <div>
   <input class='login_button' type="submit" value="Login Existing User">
