@@ -19,6 +19,7 @@ body{
   width: 100%;
   height: 75px;
   background-color: rgba(75, 75, 120, .7);
+  clear: both;
 }
 
 .errors li{
@@ -44,19 +45,19 @@ body{
   margin: 13px 20px 0 0;
 }
 
-.nav li a{
+.nav li a, div.summary a{
   text-decoration: none;
   color: rgba(47,79,79, 1);
   font-weight: bold;
 }
 
-.nav li a:hover{
+.nav li a:hover, div.summary a:hover{
   color: rgba(0, 0, 0, .9);
   text-decoration: underline;
 
 }
 
-.decks {
+.decks, .game {
   width: auto;
   text-align: center;
   color: rgba(47,79,79, 1);
@@ -66,24 +67,46 @@ table.decks{
 margin: 0 auto;
 }
 
+td.decks{
+  padding: 0, 25px, 0, 0;
+}
+
+th.decks{
+  text-align: center;
+}
+
 th {
   text-align: left;
 }
 
-.profile, th, td{
+.profile, .summary, .real_time{
+  width: auto;
+  text-align: center;
+  color: rgba(47,79,79, 1);
+}
+
+.real_time td{
+  font-weight: bolder;
+}
+
+table.profile, table.summary{
+  margin: 0 auto;
+}
+
+table.profile, th, td{
   white-space: nowrap;
-  padding: 5px 15px 5px 2px;
+  padding: 5px 20px 5px 2px;
   text-align: left;
 }
 
 .profile_foot{
+  font-weight: bold;
   border-top: 1px solid black;
 }
 
 .login{
   text-align: center; 
 }
-
 
 .create{
   text-align: center;  
@@ -126,7 +149,7 @@ form.create{
  color: rgba(47,79,79, 2); 
 }
 
-.create_fields{
+.create_fields, .guess_field{
   outline:none;
   transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
@@ -135,7 +158,7 @@ form.create{
   margin-bottom: 15px;
 }
 
-.create_fields:hover{
+.create_fields:hover, .guess_field:hover{
   box-shadow: 0 0 5px rgba(0, 0, 255, 1);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, 2); 
   -moz-box-shadow: 0 0 5px rgba(0, 0, 255, 2);
@@ -147,7 +170,21 @@ form.create{
   font-weight: bolder;
 }
 
-.login_button, .create_button{
+.login_button, .create_button, .guess_button{
   color: rgba(47,79,79, 2);
   font-weight: bold;
+}
+
+div.game_1{
+  float: left;
+  width: 500px;
+  margin-left: 200px;
+}
+
+div.game_2{
+  float: right;
+  width: 300px;
+  height: 100px;
+  margin-top: 125px; 
+  margin-right: 325px;
 }

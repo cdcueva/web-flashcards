@@ -1,4 +1,4 @@
-<h2> Round Summary </h2>
+<h2 class='summary'> Round Summary </h2>
 
 <table class='summary'>
   <tr>
@@ -14,11 +14,11 @@
     <td><%= (@round.guesses.where(correct: true).count.to_f)/(@round.guesses.size) * 100 %>%</td>
   </tr>
 </table>
-
-<div>
+<br>
+<div class='summary'>
   <a href="/deck/<%= @round.deck_id %>">Play Again</a>
 </div>
-
-<div>
-  <a href="/home">Choose different game</a>
+<br>
+<div class='summary'>
+  <a href="/home">Different Game</a>
 </div>
